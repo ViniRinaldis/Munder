@@ -1,0 +1,7 @@
+.bundle
+log/*.log
+.rbenv-version
+/tmp/
+*.swp
+*.swo
+
