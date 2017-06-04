@@ -1,0 +1,103 @@
+<DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> Munder - musica underground para todos os gostos </title>
+  <%= stylesheet_link_tag "users"%>
+  </head>
+  <body>
+    <div class="topo">
+      <img src="images/munder_logo-pqn.png" alt="Munder">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Munder_Home.html">Perfil</a><%= image_tag @user.avatar.url(:medium)%></li>
+        </ul>
+      <div class="busca">
+        <form action="#" method="get">
+          <input type="search" name="busca" placeholder="Buscar">
+          <input type="submit"/>
+        </form>
+      </div>
+
+          <br/>
+        </div>
+        <div class="menu">
+          <ul>
+            <li><a href="Munder_Home.html">Shows</a></li>
+            <li><a href="Munder_Home.html">Bandas</a></li>
+            <li><a href="Munder_Home.html">Ranking</a></li>
+            <li><a href="Munder_Home.html">Playlists</a></li>
+          </ul>
+        </div>
+        <div class="tudo"> 
+          <div class="musicas">
+            <div class="menu-musica">
+              <h2><b>Suas Músicas</b></h2>
+              <ul>
+                <li><a href="#"><img src="images/playlist.png"
+                alt="playlist"> Playlists</a></li>
+                <li>
+                <a href="#"><img src="images/musica.png" alt="Músicas">Músicas</a></li>
+                <li><a href="#"><img src="images/albuns.png" alt="Álbuns">Álbuns</a></li>
+                <li><a href="#"><img src="images/artista.png" alt="Artistas">Artistas</a></li>
+              </ul>
+            </div>
+            <div class="recentes">
+              <h2><b>Recém tocadas</b></h2>
+              <div class="musica-tocada">
+                <img src="images/cd.jpg" alt="capa do cd" >
+                <a href="#">The number of the beast</a><br/>
+                <a href="#">Iron Maiden</a><br/>
+                <a href="#">The number of the beast</a>
+              </div>
+            </div>
+          </div>
+          <div class="amigos">
+            <h2><b>Amigos</b></h2>
+            <div class="amigo-perfil">
+              <img src="images/monique.png" alt="amigo">
+              <a href="#">Amigo 1</a><br/>
+              <div class="nome-musica">
+                <a href="#"><img src="images/musica-pqn.png" alt="música"> The number of the beast</a>
+              </div>
+            </div>
+            <div class="amigo-perfil">
+              <img src="images/monique.png" alt="amigo">
+              <a href="#">Amigo 1</a><br/>
+              <div class="nome-musica">
+                <a href="#"><img src="images/musica-pqn.png" alt="música"> The number of the beast</a>
+              </div>
+            </div>
+          </div>
+
+              <div class="center-box">
+                <div class="post">
+                  <img src="images/banda_foto.png" alt="foto do artista">
+                  <div class="nome-horario"><a href="#">Iron Maiden</a><br/>
+                  <h5>12h atrás</h5><br/>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod convallis massa pellentesque accumsan. Nam risus diam, pharetra ac tincidunt et, consequat a mauris. Morbi vehicula hendrerit metus. In odio magna, porttitor vel vehicula non, hendrerit vel mauris. Ut nisl enim, volutpat sit amet quam et, faucibus porta arcu. Integer iaculis luctus turpis, quis tempus arcu luctus eget. Quisque congue vel urna non luctus. Donec ut ex leo. In hendrerit justo ante, id tincidunt est volutpat vel. Donec non convallis sem. Donec vulputate justo sit amet arcu fringilla tempor. Nullam auctor in lectus vitae hendrerit. In vitae libero vitae mauris malesuada ultricies quis eu libero. Aliquam eu commodo eros, sit amet consectetur felis. Nulla sed dolor ante. In id nisl eleifend, rhoncus lorem sed, laoreet metus.</p>
+                  <div class="comentario"><a href="#">Comentários</a><br/></div>
+                </div>
+                <div class="post">
+                  <img src="images/banda_foto.png" alt="foto do artista">
+                  <div class="nome-horario"><a href="#">Iron Maidenasidfnasidfhasd</a><br/>
+                  <h5>12h atrás</h5><br/>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum, lectus id accumsan eleifend, nisi quam varius purus, sed consequat urna lorem non felis. Duis id nisl eget nisl luctus dignissim. Nulla varius orci quis suscipit ullamcorper. Mauris pulvinar eu ex eu pharetra. Proin pulvinar, sapien non aliquam pharetra, ipsum massa sollicitudin purus, vel mattis sapien dui vitae diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin eu porttitor nibh, non fermentum felis.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/> Maecenas bibendum, lectus id accumsan eleifend, nisi quam varius purus, sed consequat urna lorem non felis. Duis id nisl eget nisl luctus dignissim. Nulla varius orci quis suscipit <br/>ullamcorper. Mauris pulvinar eu ex eu pharetra. Proin pulvinar, sapien non aliquam pharetra, ipsum massa sollicitudin purus, vel mattis sapien dui vitae diam. Cum sociis natoque penatibus e<br/>t magnis dis parturient montes, nascetur ridiculus mus. Proin eu porttitor nibh, non fermentum felis.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum, lectus id accumsan eleifend, nisi quam varius purus, sed consequat urna lorem non felis. Duis id nisl eget <br/>nisl luctus dignissim. Nulla varius orci quis suscipit ullamcorper. Mauris pulvinar eu ex eu pharetra. Proin pulvinar, sapien non aliquam pharetra, ipsum massa sollicitudin purus, vel mattis sapien dui vitae diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin eu porttitor nibh, non fermentum felis.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum, lectus id accumsan eleifend, nisi quam varius purus, sed consequat urna lorem non felis. Duis id nisl eget nisl luctus dignissim. Nulla v<br/>arius orci quis suscipit ullamcorper. Mauris pulvinar eu ex eu pharetra. Proin pulvinar, sapien non aliquam pharetra, ipsum massa sollicitudin purus, vel mattis sapien dui vitae di<br/><br/><br/><br/>am. Cum sociis na<br/>toque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin eu porttitor nibh, non fermentum felis.</p>
+                  <div class="comentario">
+                    <a href="#">Comentários</a><br/>
+                  </div>
+                </div>
+              </div>
+              <div class="footer">
+              <h5>Munder ©</h5>
+              </div>
+            </div>
+            
+            </body>
+            </html>
+
