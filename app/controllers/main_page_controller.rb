@@ -1,4 +1,5 @@
 class MainPageController < ApplicationController
+ layout "main_page"
   def index
   end
   def authenticate_user
