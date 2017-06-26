@@ -1,0 +1,158 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, 
+ul, li, article, main, footer, header, nav, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: "Helvetica" ;
+  vertical-align: baseline;
+  text-align: justify;
+}
+img video{
+  max-width: 100%;
+}
+
+body{
+  background: #282828;
+}
+html, body
+{
+  height: 100%;
+}
+.header
+{
+  position: relative;
+  padding: 0 40px;
+  clear: both;
+  margin :auto;
+  max-width: 350px;
+  margin-bottom: 20px;
+  background: #282828 url(<%= image_path "linha.png"%>) 100% repeat-x;
+  background-position: 0 100%;
+}
+.header img
+{
+  min-height: auto;
+  min-width: auto;
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+.formulario
+{
+  position: relative;
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+}
+.formulario h1
+{
+  margin: 0 auto;
+  font: 36pt "Helvetica";
+  color: #bcbabb; 
+  max-width: 220px;
+  margin-bottom: 30px;
+}
+.formulario form
+{
+  margin: 0 auto;
+  max-width: 350px;
+}
+.formulario label
+{
+  line-height: 20px;
+  font: 16px "Helvetica";
+  color: #bcbabb;
+  margin-right: 30px;
+  margin-bottom: 15px;
+  clear: both;
+  float: left;
+}
+.formulario input
+{
+  height: 20px;
+  float: right;
+  min-width: 100px;
+  border-radius: 10px;
+  border-style: none;
+}
+.no-float
+{
+  clear: both;
+  position: relative;
+  text-align: center;
+}
+.no-float label
+{
+  clear: none;
+  float: none;
+  margin-right: 0;
+}
+.no-float input
+{
+  min-width: 15px;
+  text-align: center;
+  vertical-align: middle;
+  float: none;
+  clear: both;
+}
+.no-float a
+{
+  text-decoration: none;
+  color: #bcbabb;
+}
+.no-float a:hover
+{
+  color: #FFF;
+}
+.formulario input[type="date"]
+{
+  max-width: 220px;
+}
+.formulario input[type="submit"]
+{
+  margin-top: 20px; 
+  max-width: 220px;
+  height: 30px;
+  border-radius: 30px;
+  float: left; 
+}
+.footer
+{
+  position: absolute;
+  min-width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background: #bcbabb;
+  clear: both;
+  margin-top: 70px;
+  bottom: 0;
+}
+.footer h5
+{
+  max-width: 100px;
+  margin: 0 auto;
+}
+.topo-menu
+{
+  float: right;
+  line-height: 50px;
+}
+.topo-menu a
+{
+  text-align: center;
+  float: left;
+  min-width: 70px;
+  margin-left: 10px;
+  margin: 0 auto;
+  text-decoration: none;
+  color: #bcbabb;
+  margin-right: 30px;
+}
+.topo-menu a:hover
+{
+  text-align: center;
+  color: #000000;
+  background: #FFF;
+  height: 50px;
+  min-width: 70px;
+}

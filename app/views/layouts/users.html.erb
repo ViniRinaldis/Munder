@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="topo">
-      <img src="images/munder_logo-pqn.png" alt="Munder">
+      <%= link_to(image_tag("munder_logo-pqn.png", alt: "Munder"), users_home_path)%>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="Munder_Home.html">Perfil</a><%= image_tag @user.avatar.url(:medium)%></li>
@@ -34,45 +34,26 @@
             <div class="menu-musica">
               <h2><b>Suas Músicas</b></h2>
               <ul>
-                <li><a href="#"><img src="images/playlist.png"
-                alt="playlist"> Playlists</a></li>
-                <li>
-                <a href="#"><img src="images/musica.png" alt="Músicas">Músicas</a></li>
-                <li><a href="#"><img src="images/albuns.png" alt="Álbuns">Álbuns</a></li>
-                <li><a href="#"><img src="images/artista.png" alt="Artistas">Artistas</a></li>
+                <li><a href="#"><%= image_tag "playlist.png", alt: "playlist"%> Playlists</a></li>
+                <li><a href="#"><%= image_tag "musica.png", alt: "Músicas"%>Músicas</a></li>
+                <li><a href="#"><%= image_tag "albuns.png", alt: "Álbuns"%>Álbuns</a></li>
+                <li><a href="#"><%= image_tag "artista.png", alt: "Artistas"%>Artistas</a></li>
               </ul>
             </div>
             <div class="recentes">
               <h2><b>Recém tocadas</b></h2>
               <div class="musica-tocada">
-                <img src="images/cd.jpg" alt="capa do cd" >
+                <%= image_tag "cd.jpg", alt: "capa do cd"%>
                 <a href="#">The number of the beast</a><br/>
                 <a href="#">Iron Maiden</a><br/>
                 <a href="#">The number of the beast</a>
               </div>
             </div>
           </div>
-          <div class="amigos">
-            <h2><b>Amigos</b></h2>
-            <div class="amigo-perfil">
-              <img src="images/monique.png" alt="amigo">
-              <a href="#">Amigo 1</a><br/>
-              <div class="nome-musica">
-                <a href="#"><img src="images/musica-pqn.png" alt="música"> The number of the beast</a>
-              </div>
-            </div>
-            <div class="amigo-perfil">
-              <img src="images/monique.png" alt="amigo">
-              <a href="#">Amigo 1</a><br/>
-              <div class="nome-musica">
-                <a href="#"><img src="images/musica-pqn.png" alt="música"> The number of the beast</a>
-              </div>
-            </div>
-          </div>
-
+          <%= render partial: "shared/friends_side_menu.html.erb"%>
               <div class="center-box">
                 <div class="post">
-                  <img src="images/banda_foto.png" alt="foto do artista">
+                  <%= image_tag "banda_foto.png", alt: "foto do artista"%>
                   <div class="nome-horario"><a href="#">Iron Maiden</a><br/>
                   <h5>12h atrás</h5><br/>
                   </div>
@@ -80,8 +61,8 @@
                   <div class="comentario"><a href="#">Comentários</a><br/></div>
                 </div>
                 <div class="post">
-                  <img src="images/banda_foto.png" alt="foto do artista">
-                  <div class="nome-horario"><a href="#">Iron Maidenasidfnasidfhasd</a><br/>
+                  <%= image_tag "banda_foto.png", alt: "foto do artista"%>
+                  <div class="nome-horario"><a href="#">Iron Maiden</a><br/>
                   <h5>12h atrás</h5><br/>
                   </div>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum, lectus id accumsan eleifend, nisi quam varius purus, sed consequat urna lorem non felis. Duis id nisl eget nisl luctus dignissim. Nulla varius orci quis suscipit ullamcorper. Mauris pulvinar eu ex eu pharetra. Proin pulvinar, sapien non aliquam pharetra, ipsum massa sollicitudin purus, vel mattis sapien dui vitae diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin eu porttitor nibh, non fermentum felis.</p>

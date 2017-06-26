@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> Cadastre-se | Munder </title>
+<%= stylesheet_link_tag "subscription"%>
+</head>
+<body>
+<div class="topo-menu">
+  <a href="index.html">home</a>
+  <a href="munder_home.html">demo</a>
+</div>
+<div class="header">
+  <%= image_tag "header-cadastro.png", alt: "Munder"%>
+</div>
+<div class="formulario">
+  <h1><b>Cadastro</b></h1>
+  <%= form_tag create_user_path, method: :post do %>
+    <label>nome:</label><%= text_field_tag "[user]name"%><br/>
+    <label>username:</label><%= text_field_tag "[user]username"%><br/>
+    <label>password:</label><%= password_field_tag "[user]password"%><br/>
+    <label>email:</label><%= text_field_tag "[user]email"%><br/>
+    <label>data de nascimento:</label><br/><br/><br/><%= select_date nil, prefix: "[user]birthdate"%><br/>
+    <div class="no-float">
+      <label>gênero :</label><input type="radio" name="[user]gender" value="m" checked><label>masculino</label><input type="radio" name="[user]genero" value="f" ><label>feminino</label><br/>
+      <input type="checkbox" name="termos"><label>Eu aceito os <a href="#">termos</a> de serviço</label><br/>
+    </div>
+    <input type="submit" value="submit">
+  <% end %>
+</div>
+
+<div class="footer">
+  <h5>Munder ©</h5>
+</div>
+
+</body>
+</html>

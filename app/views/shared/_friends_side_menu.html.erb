@@ -1,0 +1,12 @@
+<div class="amigos">
+  <h2><b>Amigos</b></h2>
+  <% @friends.each do |friend| %> 
+    <div class="amigo-perfil">
+      <%= image_tag friend.avatar.url(:small), alt: "amigo"%>
+      <a href="#"><%= friend.name %></a><br/>
+      <div class="nome-musica">
+        <a href="#"><%= image_tag "musica-pqn.png", alt: "música"%> The number of the beast</a>
+      </div>
+    </div>
+  <% end %>
+</div>
