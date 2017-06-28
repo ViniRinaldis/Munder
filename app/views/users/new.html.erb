@@ -15,17 +15,14 @@
 </div>
 <div class="formulario">
   <h1><b>Cadastro</b></h1>
-  <%= form_tag create_user_path, method: :post do %>
-    <label>nome:</label><%= text_field_tag "[user]name"%><br/>
-    <label>username:</label><%= text_field_tag "[user]username"%><br/>
-    <label>password:</label><%= password_field_tag "[user]password"%><br/>
-    <label>email:</label><%= text_field_tag "[user]email"%><br/>
-    <label>data de nascimento:</label><br/><br/><br/><%= select_date nil, prefix: "[user]birthdate"%><br/>
-    <div class="no-float">
-      <label>gênero :</label><input type="radio" name="[user]gender" value="m" checked><label>masculino</label><input type="radio" name="[user]genero" value="f" ><label>feminino</label><br/>
-      <input type="checkbox" name="termos"><label>Eu aceito os <a href="#">termos</a> de serviço</label><br/>
-    </div>
-    <input type="submit" value="submit">
+  <%= form_for @user, url: create_user_path, html: { multipart: true } do |form| %>
+    <label>nome:</label><%= form.text_field :name%>
+    <label>username:</label>  <%= form.text_field :username%>
+    <label>senha:</label> <%= form.password_field :password%>
+    <label>email:</label><%= form.text_field :email%>
+    <label>data de nascimento:</label><%= form.date_field :birthdate%>
+    <label>Foto:</label><%= form.file_field :avatar %>
+    <%= form.submit "confirmar"%>
   <% end %>
 </div>
 

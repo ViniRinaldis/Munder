@@ -7,9 +7,15 @@ class UsersController < ApplicationController
   end
 
   def new
+    @user = User.new
     render :new, layout: false
   end
 
   def create
+    user_params = params.require(:user).permit(:name, :username, :password, :email, :birthdate, :avatar)
+    User.create(user_params)
+    redirect_to :root
   end
+
+  
 end
