@@ -4,6 +4,7 @@ class UsersController < ApplicationController
  before_filter :check_user, except: [:new, :create]
   def home
     @friends = @user.friends
+    @posts = @user.artists.map(&:posts).flatten.sort{|a,b| a.created_at > b.created_at}
   end
 
   def new

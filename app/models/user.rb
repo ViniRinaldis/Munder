@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 
   has_many :friendships 
   has_many :friends, through: :friendships
+  has_and_belongs_to_many :artists
   
   def authenticate_password?(password)
     self.password == password

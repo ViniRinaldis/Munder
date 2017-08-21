@@ -1,0 +1,10 @@
+<% @posts.each do |post| %>
+  <div class="post">
+  <%= image_tag post.artist.avatar.url(:small)%>
+  <div class="nome-horario"><a href="#"><%= post.artist.name.capitalize%></a><br/>
+    <h5><%= post.created_at.strftime("%d/%m/%y %H:%M")%></h5><br/>
+  </div>
+  <p><%= post.content.html_safe%></p>
+  <div class="comentario"><a href="#">Comentários</a><br/></div>
+</div>
+<% end %>

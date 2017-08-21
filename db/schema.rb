@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170627235045) do
+ActiveRecord::Schema.define(version: 20170820135815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "artists", force: :cascade do |t|
+    t.string   "name"
+    t.string   "style"
+    t.string   "region"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+  end
+
+  create_table "artists_users", id: false, force: :cascade do |t|
+    t.integer "artist_id", null: false
+    t.integer "user_id",   null: false
+  end
 
   create_table "friendships", id: false, force: :cascade do |t|
     t.integer "user_id"
@@ -22,13 +39,12 @@ ActiveRecord::Schema.define(version: 20170627235045) do
     t.index ["user_id"], name: "index_friendships_on_user_id", using: :btree
   end
 
-  create_table "musical_groups", force: :cascade do |t|
-    t.string "name"
-  end
-
-  create_table "musical_groups_users", id: false, force: :cascade do |t|
-    t.integer "user_id",          null: false
-    t.integer "musical_group_id", null: false
+  create_table "posts", force: :cascade do |t|
+    t.integer  "artist_id"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_posts_on_artist_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
