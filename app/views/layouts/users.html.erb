@@ -4,13 +4,14 @@
   <meta charset="utf-8">
   <title> Munder - musica underground para todos os gostos </title>
   <%= stylesheet_link_tag "users"%>
+  <%= yield :head %>
   </head>
   <body>
     <div class="topo">
       <%= link_to(image_tag("munder_logo-pqn.png", alt: "Munder"), users_home_path)%>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="Munder_Home.html">Perfil</a><%= image_tag @user.avatar.url(:small)%></li>
+        <li><a href="<%= users_home_path%>">Home</a></li>
+        <li><a href="<%= profile_user_path(user_profile_id: @user.id)%>">Perfil</a><%= image_tag @user.avatar.url(:small)%></li>
         </ul>
       <div class="busca">
         <form action="#" method="get">
@@ -52,7 +53,7 @@
           </div>
           <%= render partial: "shared/friends_side_menu.html.erb"%>
           <div class="center-box">
-            <%= render partial: "shared/posts.html.erb"%>
+            <%= yield %>
           </div>
         </div>
             

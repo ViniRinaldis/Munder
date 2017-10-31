@@ -3,7 +3,7 @@
   <% @friends.each do |friend| %> 
     <div class="amigo-perfil">
       <%= image_tag friend.avatar.url(:small), alt: "amigo"%>
-      <a href="#"><%= friend.name %></a><br/>
+      <a href="#"><%= link_to friend.name, profile_user_path(user_profile_id: friend.id) %></a><br/>
       <div class="nome-musica">
         <a href="#"><%= image_tag "musica-pqn.png", alt: "música"%> The number of the beast</a>
       </div>

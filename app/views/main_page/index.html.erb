@@ -1,16 +1,25 @@
 <%= content_for :stylesheets do %>
   <%= stylesheet_link_tag "home_page"%>
+  <style>
+    .munder-image{
+      width: 300px;
+      float: left;
+    }
+  </style>
 <% end %>  
 <div class='center-box'>
   <div class='logo'>
-    <h1>Munder</h1>
+    <%= image_tag "munder-500.png", alt: "Munder", class: "munder-image"%>
   </div>
   <div class="login-container">
     <div class='login-form'>
       <%= form_tag authenticate_user_path, method: :post do %>
-        <%= text_field_tag :username %>
-        <%= password_field_tag :password %>
-        <%= submit_tag "Log in"%>
+        <%= text_field_tag :username, nil, placeholder: "Username"%>
+        <%= password_field_tag :password, nil, placeholder: "Password" %>
+        <div>
+          <%= submit_tag "Log in", class: "submit" %>
+          <%= link_to "cadastre-se", new_user_path %>
+        </div>
       <% end %>
     </div>
   </div>

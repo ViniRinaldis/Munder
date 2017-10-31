@@ -1,0 +1,72 @@
+<% content_for :head do%>
+  <style>
+  h1,h2,h3{
+    color: #FFFFFF;
+  }
+.profile_container{
+  
+}
+.profile_picture{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  float: left;
+  margin-bottom: 30px;
+}
+.user-name{
+  color: #FFFFFF;
+  display: inline;
+  float: left;
+  margin-top: 50px;
+  margin-left: 100px;
+  font-size: 300%;
+}
+.followed-bands-container{
+  padding: 20px;
+  height: 150px;
+  background: #171717;
+  clear: both;
+  margin-top: 30px;
+}
+.artist-box-container{
+  float: left;
+  margin-right: 21px;
+  text-align: center;
+}
+span{
+  color: #FFFFFF;
+}
+.artist-image{
+  margin-top: 22px;
+  width: 100px;
+}
+</style>
+
+<% end %>
+
+<div class="profile-container">
+  <div class="profile-header">
+    <%= image_tag @user_profiled.avatar.url(:medium), alt: "Profile_picture", class: "profile_picture"%>
+    <h1 class="user-name"><%= @user_profiled.name %></h1>
+  </div>
+  <div class="followed-bands-container">
+    <h2>Bandas curtidas:</h2>
+    <% @artists_followed.last(5).each do |artist|%>
+      <div class="artist-box-container">
+        <a href="<%= artist_path(artist_id: artist.id)%>">
+        <%= image_tag artist.avatar.url(:medium), alt: artist.name, class: "artist-image"%><br/>
+        <span><%= artist.name.capitalize%></span>
+        </a>
+      </div>
+    <% end %>
+  </div>
+  <div class="followed-bands-container">
+    <h2>Amigos:</h2>
+    <% @user_profiled.friends.last(5).each do |artist|%>
+      <div class="friends-box-container">
+        <%= image_tag artist.avatar.url(:medium), alt: artist.name, class: "artist-image"%><br/>
+        <span><%= artist.name.capitalize%></span>
+      </div>
+    <% end %>
+  </div>
+</div>

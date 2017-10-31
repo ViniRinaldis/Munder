@@ -6,5 +6,6 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
     @user = User.find session[:user]
+    @friends = @user.friends
   end
 end

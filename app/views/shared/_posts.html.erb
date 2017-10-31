@@ -1,7 +1,16 @@
+<% content_for :head do%>
+  <style>
+    .artist-post-image{
+      width: 50px;
+
+    }
+  </style>
+<% end  %>
+
 <% @posts.each do |post| %>
   <div class="post">
-  <%= image_tag post.artist.avatar.url(:small)%>
-  <div class="nome-horario"><a href="#"><%= post.artist.name.capitalize%></a><br/>
+  <%= image_tag post.artist.avatar.url(:small), class: "artist-post-image"%>
+  <div class="nome-horario"><a href="<%= artist_path(artist_id: post.artist.id)%>"><%= post.artist.name.capitalize%></a><br/>
     <h5><%= post.created_at.strftime("%d/%m/%y %H:%M")%></h5><br/>
   </div>
   <p><%= post.content.html_safe%></p>
